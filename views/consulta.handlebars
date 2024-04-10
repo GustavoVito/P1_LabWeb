@@ -1,0 +1,37 @@
+
+    <div class="container">
+        <h1>Tela de Consulta</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>Bairro</th>
+                    <th>CEP</th>
+                    <th>Cidade</th>
+                    <th>Estado</th>
+                    <th>Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Adicione mais linhas conforme necessário -->
+                {{#each post}}
+                    {{#dataValues}}
+                        <tr>
+                            <td>{{nome}}</td>
+                            <td>{{telefone}}</td>
+                            <td>{{endereco}}</td>
+                            <td>{{bairro}}</td>
+                            <td>{{cep}}</td>
+                            <td>{{cidade}}</td>
+                            <td>{{estado}}</td>
+                            <td>
+                                <button class="btn btn-primary"><a href="/editar/{{id}}" class="text-white">Editar</a></button>
+                                <button class="btn btn-danger"><a href="/excluir/{{id}}" class="text-white">Excluir</a></button>
+                            </td>
+                        </tr>  
+                    {{/dataValues}}
+                {{/each}} 
+            </tbody>
+        </table>
+    </div>
